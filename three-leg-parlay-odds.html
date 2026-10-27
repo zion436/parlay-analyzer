@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Odds of Hitting a 3-Leg NFL Parlay | SlipCheck</title>
+<meta name="description" content="The real odds of hitting a 3-leg NFL parlay, what it pays at standard pricing, and how much the sportsbook's margin costs you as legs are added.">
+<style>
+:root{--ink:#16212b;--muted:#4b5b69;--bg:#f4f7f5;--card:#ffffff;--line:#d5ded8;--brand:#0b5d3b;--brand-dark:#07402a;--accent:#f2b705;--soft:#e7f1ec}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:17px}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px}
+.notice{background:#fff1b8;color:#3a2c00;border-bottom:2px solid var(--accent);font-size:.9rem;padding:10px 0;text-align:center}
+.notice p{margin:0}
+header.site{background:var(--brand);color:#fff}
+.site-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 20px;padding:14px 0}
+.logo{color:#fff;font-weight:800;font-size:1.35rem;text-decoration:none;letter-spacing:.2px}
+.logo span{color:var(--accent)}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+nav a{display:block;color:#fff;text-decoration:none;padding:8px 12px;border-radius:6px;font-size:.95rem;font-weight:600}
+nav a:hover,nav a:focus{background:var(--brand-dark)}
+nav a[aria-current="page"]{background:var(--brand-dark);box-shadow:inset 0 -3px 0 var(--accent)}
+main{padding:28px 0 40px}
+h1{font-size:clamp(1.65rem,5.5vw,2.35rem);line-height:1.2;margin:0 0 14px;color:var(--brand-dark)}
+h2{font-size:clamp(1.3rem,4vw,1.6rem);line-height:1.25;margin:34px 0 10px;color:var(--brand-dark)}
+h3{font-size:1.1rem;margin:20px 0 6px}
+p{margin:0 0 14px}
+a{color:#0a5a8a}
+.lead{font-size:1.12rem;color:var(--muted)}
+.answer{background:var(--soft);border-left:5px solid var(--brand);padding:14px 16px;border-radius:0 8px 8px 0;margin:18px 0}
+.answer p:last-child{margin-bottom:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:8px}
+.btn:hover,.btn:focus{background:var(--brand-dark)}
+.btn.alt{background:#fff;color:var(--brand-dark);border:2px solid var(--brand)}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card h3{margin-top:0}
+.card p{margin-bottom:10px}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:.95rem}
+caption{caption-side:top;text-align:left;font-weight:700;padding:10px 12px;color:var(--brand-dark)}
+th,td{padding:9px 12px;border-top:1px solid var(--line);text-align:left}
+thead th{background:var(--soft);border-top:0}
+.note{font-size:.88rem;color:var(--muted)}
+ol,ul.plain{padding-left:22px;margin:0 0 14px}
+li{margin-bottom:8px}
+details{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:10px 0 0}
+.help{background:#fff;border:2px solid var(--brand);border-radius:10px;padding:16px;margin:30px 0 0}
+.help h2{margin-top:0}
+footer.site-foot{background:var(--brand-dark);color:#e8f0ec;padding:26px 0;font-size:.92rem}
+footer.site-foot a{color:#fff}
+footer.site-foot nav ul{margin-bottom:14px}
+footer.site-foot nav a{padding:6px 10px;background:rgba(255,255,255,.08)}
+.foot-notice{background:rgba(255,255,255,.1);padding:10px 12px;border-radius:6px}
+@media (min-width:700px){body{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="notice"><div class="wrap"><p>This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p></div></div>
+
+<header class="site">
+<div class="wrap site-top">
+<a class="logo" href="index.html">Slip<span>Check</span></a>
+<nav aria-label="Main">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="player-prop-hit-rates.html">Prop Hit Rates</a></li>
+<li><a href="three-leg-parlay-odds.html" aria-current="page">3-Leg Odds</a></li>
+<li><a href="parlay-true-probability.html">True Probability</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<div class="wrap">
+
+<h1>The odds of hitting a 3-leg NFL parlay</h1>
+<p class="lead">Three legs feels like a modest ask. It is not. Here is the actual chance of cashing, what it pays, and what it costs you over time.</p>
+
+<div class="answer">
+<p><strong>The quick answer.</strong> If each of the three legs is a true coin flip, the parlay hits 12.5% of the time, or 1 in 8. At the standard -110 price on every leg, a winning ticket pays about +596, while a fair payout for those odds would be +700. If you are good enough that each leg really wins 60% of the time, the parlay hits 21.6%, about 1 in 4.6.</p>
+</div>
+
+<h2>The basic math</h2>
+<p>To win a parlay, every leg has to win. When legs do not affect each other, you multiply their chances. Three legs at 50% each gives 0.5 times 0.5 times 0.5, which is 0.125.</p>
+<p>The better each leg is, the faster the total climbs, but it never climbs as fast as most people expect.</p>
+
+<div class="table-wrap">
+<table>
+<caption>Chance of hitting a 3-leg parlay by chance per leg</caption>
+<thead><tr><th>Chance each leg wins</th><th>Chance all 3 win</th><th>About 1 in</th></tr></thead>
+<tbody>
+<tr><td>50%</td><td>12.5%</td><td>8.0</td></tr>
+<tr><td>55%</td><td>16.6%</td><td>6.0</td></tr>
+<tr><td>60%</td><td>21.6%</td><td>4.6</td></tr>
+<tr><td>65%</td><td>27.5%</td><td>3.6</td></tr>
+<tr><td>70%</td><td>34.3%</td><td>2.9</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Even a bettor who wins 70% of single bets, which almost nobody sustains, loses a 3-leg parlay nearly two times out of three.</p>
+
+<h2>What a 3-leg parlay pays</h2>
+<p>Most NFL spreads and totals are priced at -110, which means you risk $110 to win $100. Chain three of them and the payout multiplies the same way: roughly 6.96 times your stake returned in total, which is a profit of about $596 on a $100 bet. Written as American odds, that is +596.</p>
+<p>A bet with a 12.5% chance of winning should pay +700 to be fair. You get +596. The gap of about $104 on every $100 is the sportsbook's margin on the parlay.</p>
+
+<h2>How the cost grows with each leg</h2>
+<p>The sportsbook's margin does not sit on the parlay once. It sits on every leg, and the effect multiplies. The table assumes each leg is a true 50% coin flip priced at -110, which is what a -110 price is built to represent.</p>
+
+<div class="table-wrap">
+<table>
+<caption>Parlay cost by number of legs, all legs at -110 and a true 50%</caption>
+<thead><tr><th>Legs</th><th>Chance of cashing</th><th>Payout</th><th>Fair payout</th><th>Expected loss per $100</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>50.0%</td><td>+91</td><td>+100</td><td>$4.55</td></tr>
+<tr><td>2</td><td>25.0%</td><td>+264</td><td>+300</td><td>$8.88</td></tr>
+<tr><td>3</td><td>12.5%</td><td>+596</td><td>+700</td><td>$13.03</td></tr>
+<tr><td>4</td><td>6.25%</td><td>+1228</td><td>+1500</td><td>$16.98</td></tr>
+<tr><td>5</td><td>3.1%</td><td>+2436</td><td>+3100</td><td>$20.75</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>A single bet costs you about $4.55 per $100 over the long run. A 3-leg parlay costs about $13. A 5-leg parlay costs about $21. Parlays are the most expensive way to bet the same games, and the price rises with every leg you add.</p>
+
+<h2>What you need to beat a 3-leg parlay</h2>
+<p>A 3-leg parlay at -110 pays +596, so you break even if it hits 14.4% of the time. If your three legs are equally strong, each one needs to win about 52.4% of the time. That is the same break-even you face on a single -110 bet, which makes sense: the margin is the same per leg, just repeated.</p>
+<p>The test is easy to state and hard to pass. You need legs that win more than 52.4% of the time on average, not for a few weeks, but across a long run of tickets. Most bettors never confirm they can do this because they do not track enough bets to find out.</p>
+
+<div class="table-wrap">
+<table>
+<caption>What a 3-leg payout needs in order to break even</caption>
+<thead><tr><th>Payout offered</th><th>Break-even chance for the ticket</th></tr></thead>
+<tbody>
+<tr><td>+500</td><td>16.7%</td></tr>
+<tr><td>+596</td><td>14.4%</td></tr>
+<tr><td>+600</td><td>14.3%</td></tr>
+<tr><td>+700</td><td>12.5%</td></tr>
+<tr><td>+800</td><td>11.1%</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>If you can honestly estimate your ticket at more than the break-even number, the price is fair or better. If not, you are paying for the thrill. Our <a href="parlay-true-probability.html">true probability guide</a> shows how to run this check on any payout.</p>
+
+<h2>Same game parlays are different</h2>
+<p>Everything above assumes the legs do not influence each other. In a same game parlay they often do. If a quarterback throws for a lot of yards, his top receiver is more likely to go over his yardage line too. The true chance of both happening is higher than multiplying the two chances would suggest.</p>
+<p>Sportsbooks know this and price same game parlays with their own models, usually with extra margin on top. Do not assume that stacking related legs is a bargain. The extra correlation is already in the payout you are offered.</p>
+
+<h2>Common questions</h2>
+<details>
+<summary>What are the odds of winning a 3-leg parlay?</summary>
+<p>About 12.5% (1 in 8) if each leg is a coin flip, and about 21.6% (1 in 4.6) if each leg wins 60% of the time. Real results depend on the legs you pick.</p>
+</details>
+<details>
+<summary>How much does a 3-leg parlay pay?</summary>
+<p>At -110 on every leg, a winning $100 ticket returns a profit of about $596. Different prices on the legs change that number, and many sportsbooks round it slightly differently.</p>
+</details>
+<details>
+<summary>Is a 3-leg parlay a good bet?</summary>
+<p>At standard pricing it costs you about $13 per $100 wagered over the long run, compared with about $4.55 on a single bet. It is only a good bet if your legs are stronger than the prices say, and you can show that over many tickets.</p>
+</details>
+<details>
+<summary>Do more legs mean better odds?</summary>
+<p>More legs mean a bigger payout and a smaller chance of cashing. The margin you pay grows with each leg, so the cost per dollar bet rises as well.</p>
+</details>
+
+<p>Want to build your legs from past results first? Start with our guide to <a href="player-prop-hit-rates.html">player prop hit rates</a>.</p>
+
+<div class="help">
+<h2>21+ and problem gambling help</h2>
+<p>SlipCheck is for adults 21 and older. Only bet money you can afford to lose. If gambling is causing you stress or problems, call or text 1-800-GAMBLER to reach the National Problem Gambling Helpline.</p>
+</div>
+
+</div>
+</main>
+
+<footer class="site-foot">
+<div class="wrap">
+<p class="foot-notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+<nav aria-label="Footer">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="player-prop-hit-rates.html">Prop Hit Rates</a></li>
+<li><a href="three-leg-parlay-odds.html">3-Leg Odds</a></li>
+<li><a href="parlay-true-probability.html">True Probability</a></li>
+</ul>
+</nav>
+<p>SlipCheck is for adults 21 and older and does not accept bets. Problem gambling help: 1-800-GAMBLER.</p>
+<p>&copy; 2026 SlipCheck (fictional). Contact: hello@slipcheck.example</p>
+</div>
+</footer>
+</body>
+</html>
