@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NFL Parlay Calculator: Find the True Probability | SlipCheck</title>
+<meta name="description" content="A step-by-step way to turn a parlay payout into a true probability: convert odds, remove the sportsbook margin, multiply your legs, and compare.">
+<style>
+:root{--ink:#16212b;--muted:#4b5b69;--bg:#f4f7f5;--card:#ffffff;--line:#d5ded8;--brand:#0b5d3b;--brand-dark:#07402a;--accent:#f2b705;--soft:#e7f1ec}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:17px}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px}
+.notice{background:#fff1b8;color:#3a2c00;border-bottom:2px solid var(--accent);font-size:.9rem;padding:10px 0;text-align:center}
+.notice p{margin:0}
+header.site{background:var(--brand);color:#fff}
+.site-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 20px;padding:14px 0}
+.logo{color:#fff;font-weight:800;font-size:1.35rem;text-decoration:none;letter-spacing:.2px}
+.logo span{color:var(--accent)}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+nav a{display:block;color:#fff;text-decoration:none;padding:8px 12px;border-radius:6px;font-size:.95rem;font-weight:600}
+nav a:hover,nav a:focus{background:var(--brand-dark)}
+nav a[aria-current="page"]{background:var(--brand-dark);box-shadow:inset 0 -3px 0 var(--accent)}
+main{padding:28px 0 40px}
+h1{font-size:clamp(1.65rem,5.5vw,2.35rem);line-height:1.2;margin:0 0 14px;color:var(--brand-dark)}
+h2{font-size:clamp(1.3rem,4vw,1.6rem);line-height:1.25;margin:34px 0 10px;color:var(--brand-dark)}
+h3{font-size:1.1rem;margin:20px 0 6px}
+p{margin:0 0 14px}
+a{color:#0a5a8a}
+.lead{font-size:1.12rem;color:var(--muted)}
+.answer{background:var(--soft);border-left:5px solid var(--brand);padding:14px 16px;border-radius:0 8px 8px 0;margin:18px 0}
+.answer p:last-child{margin-bottom:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:8px}
+.btn:hover,.btn:focus{background:var(--brand-dark)}
+.btn.alt{background:#fff;color:var(--brand-dark);border:2px solid var(--brand)}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card h3{margin-top:0}
+.card p{margin-bottom:10px}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:.95rem}
+caption{caption-side:top;text-align:left;font-weight:700;padding:10px 12px;color:var(--brand-dark)}
+th,td{padding:9px 12px;border-top:1px solid var(--line);text-align:left}
+thead th{background:var(--soft);border-top:0}
+.note{font-size:.88rem;color:var(--muted)}
+ol,ul.plain{padding-left:22px;margin:0 0 14px}
+li{margin-bottom:8px}
+details{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:10px 0 0}
+.help{background:#fff;border:2px solid var(--brand);border-radius:10px;padding:16px;margin:30px 0 0}
+.help h2{margin-top:0}
+footer.site-foot{background:var(--brand-dark);color:#e8f0ec;padding:26px 0;font-size:.92rem}
+footer.site-foot a{color:#fff}
+footer.site-foot nav ul{margin-bottom:14px}
+footer.site-foot nav a{padding:6px 10px;background:rgba(255,255,255,.08)}
+.foot-notice{background:rgba(255,255,255,.1);padding:10px 12px;border-radius:6px}
+@media (min-width:700px){body{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="notice"><div class="wrap"><p>This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p></div></div>
+
+<header class="site">
+<div class="wrap site-top">
+<a class="logo" href="index.html">Slip<span>Check</span></a>
+<nav aria-label="Main">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="player-prop-hit-rates.html">Prop Hit Rates</a></li>
+<li><a href="three-leg-parlay-odds.html">3-Leg Odds</a></li>
+<li><a href="parlay-true-probability.html" aria-current="page">True Probability</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<div class="wrap">
+
+<h1>NFL parlay calculator: turn a payout into a true probability</h1>
+<p class="lead">A standard parlay calculator tells you what you would win. This page does the reverse. It shows you how to take the payout on your slip and work out how often the ticket needs to hit for the price to be fair.</p>
+
+<div class="answer">
+<p><strong>The method in one line.</strong> Convert each price to a chance, strip out the sportsbook's margin, multiply the legs together, and compare that number to the break-even chance of the payout. If your estimate is higher, the price is fair or better. If it is lower, the book is mostly taking its cut.</p>
+</div>
+
+<h2>Step 1: convert odds to an implied probability</h2>
+<p>American odds hide a probability inside them. For negative odds, divide the odds (ignoring the minus sign) by that number plus 100. For positive odds, divide 100 by the odds plus 100.</p>
+<p>So -150 becomes 150 divided by 250, which is 60.0%. And +600 becomes 100 divided by 700, which is 14.3%.</p>
+
+<div class="table-wrap">
+<table>
+<caption>American odds and the chance they imply</caption>
+<thead><tr><th>Odds</th><th>Implied chance</th></tr></thead>
+<tbody>
+<tr><td>-200</td><td>66.7%</td></tr>
+<tr><td>-150</td><td>60.0%</td></tr>
+<tr><td>-110</td><td>52.4%</td></tr>
+<tr><td>+100</td><td>50.0%</td></tr>
+<tr><td>+150</td><td>40.0%</td></tr>
+<tr><td>+300</td><td>25.0%</td></tr>
+<tr><td>+600</td><td>14.3%</td></tr>
+<tr><td>+1000</td><td>9.1%</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>Step 2: remove the sportsbook's margin</h2>
+<p>A two-sided bet such as a point spread has an over and an under, or two teams. If both sides are priced at -110, each implies 52.4%, and the two add up to 104.8%. Real probabilities add up to 100%, so the extra 4.8 points are the sportsbook's margin.</p>
+<p>To remove it, divide each side's implied chance by the total. For -110 on both sides, that gives 50% each. When the sides are priced differently the answer shifts. Take -120 on one side and +100 on the other. The implied chances are 54.5% and 50.0%, which add to 104.5%. Dividing each by 104.5% gives 52.2% and 47.8%. Those are the market's best guess at the true chances, with the margin taken out.</p>
+<p>This matters because a parlay payout is built from the margin-loaded prices. If you start from the raw implied chances you will think the market is more confident than it really is.</p>
+
+<h2>Step 3: multiply your legs</h2>
+<p>For legs that do not depend on each other, the chance of the full ticket is the product of the leg chances. You can use the market's margin-free number for each leg, or your own estimate from past results if you have reason to believe it differs. Our <a href="player-prop-hit-rates.html">prop hit rate guide</a> shows how to build that estimate and adjust it for small samples.</p>
+<p>Take three legs we estimate at 54%, 52%, and 50%. Multiply them: 0.54 times 0.52 is 0.2808, and times 0.50 is 0.1404. The ticket has about a 14.0% chance of cashing.</p>
+
+<h2>Step 4: compare to the payout</h2>
+<p>Now put that 14.0% next to the payout offered. The same three legs can look very different at two different prices.</p>
+
+<div class="table-wrap">
+<table>
+<caption>The same three legs at two different payouts</caption>
+<thead><tr><th>Slip</th><th>Our estimate</th><th>Offered</th><th>Break-even</th><th>Fair payout</th><th>Expected result per $100</th></tr></thead>
+<tbody>
+<tr><td>A</td><td>14.0%</td><td>+600</td><td>14.3%</td><td>+612</td><td>-$1.72</td></tr>
+<tr><td>B</td><td>14.0%</td><td>+475</td><td>17.4%</td><td>+612</td><td>-$19.27</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Slip A is close to fairly priced. The book offers +600 and the legs justify about +612, so you are giving up a little under two dollars per hundred. Slip B is the same ticket at a worse price. You would be paying nearly twenty dollars per hundred for the same chance of winning. The legs did not change. Only the price did.</p>
+<p>To find the fair American odds for any chance p, use +100 times (1 minus p) divided by p when p is under 50%. When p is 50% or more, use -100 times p divided by (1 minus p). At 14.04%, that gives +612.</p>
+
+<h2>How good do your legs need to be?</h2>
+<p>Turning the math around shows how demanding a given payout is. A +600 ticket needs to hit 14.3% of the time. If every leg has the same chance, here is what each one needs.</p>
+
+<div class="table-wrap">
+<table>
+<caption>Chance needed per leg to break even at +600</caption>
+<thead><tr><th>Legs</th><th>Each leg must win</th></tr></thead>
+<tbody>
+<tr><td>2</td><td>37.8%</td></tr>
+<tr><td>3</td><td>52.3%</td></tr>
+<tr><td>4</td><td>61.5%</td></tr>
+<tr><td>5</td><td>67.8%</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>A +600 payout on a 2-leg ticket would be a gift, since each leg only needs to win 37.8% of the time. On a 3-leg ticket it is roughly a fair price at coin-flip legs. On 4 or 5 legs, the same payout asks for legs that very few bettors can find week after week.</p>
+
+<h2>Where this method breaks down</h2>
+<p>Multiplication works when one leg's result does not change the odds of another. Legs from different games usually come close. Legs from the same game often do not. A team that wins big tends to run the ball late, which pushes its quarterback's passing yards down and its running back's rushing yards up. If you multiply those as if they were unrelated you will get a number that is too high or too low.</p>
+<p>The method is also only as good as the inputs. A guess of 60% on a leg that is really 50% will make a bad ticket look great. Use adjusted hit rates, check the break-even for each price, and be willing to say the number is uncertain.</p>
+
+<h2>Common questions</h2>
+<details>
+<summary>How do I calculate the true probability of a parlay?</summary>
+<p>Estimate the chance of each leg, multiply them together, and compare the result with the break-even chance of the payout. Use margin-free numbers for each leg if you are working from the market's prices.</p>
+</details>
+<details>
+<summary>Is the implied probability the true probability?</summary>
+<p>Not quite. The implied probability includes the sportsbook's margin, so both sides of a bet add up to more than 100%. Remove the margin first, as in Step 2, to get a closer estimate.</p>
+</details>
+<details>
+<summary>Why do most parlay calculators only show a payout?</summary>
+<p>Payout is what bettors ask for first. The chance of winning takes a little more work to produce, which is the gap SlipCheck is built to fill.</p>
+</details>
+<details>
+<summary>Can this method tell me a ticket will win?</summary>
+<p>No. It tells you whether the price is fair for the chance you estimated. Even a well-priced 14% ticket loses 86% of the time. See <a href="three-leg-parlay-odds.html">the odds of a 3-leg parlay</a> for what that looks like in practice.</p>
+</details>
+
+<div class="help">
+<h2>21+ and problem gambling help</h2>
+<p>SlipCheck is for adults 21 and older. Only bet money you can afford to lose. If gambling is causing you stress or problems, call or text 1-800-GAMBLER to reach the National Problem Gambling Helpline.</p>
+</div>
+
+</div>
+</main>
+
+<footer class="site-foot">
+<div class="wrap">
+<p class="foot-notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+<nav aria-label="Footer">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="player-prop-hit-rates.html">Prop Hit Rates</a></li>
+<li><a href="three-leg-parlay-odds.html">3-Leg Odds</a></li>
+<li><a href="parlay-true-probability.html">True Probability</a></li>
+</ul>
+</nav>
+<p>SlipCheck is for adults 21 and older and does not accept bets. Problem gambling help: 1-800-GAMBLER.</p>
+<p>&copy; 2026 SlipCheck (fictional). Contact: hello@slipcheck.example</p>
+</div>
+</footer>
+</body>
+</html>
