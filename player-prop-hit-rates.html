@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NFL Parlay Builder: Player Prop Hit Rates Explained | SlipCheck</title>
+<meta name="description" content="How to use player prop hit rates when building an NFL parlay, why a high hit rate can mislead, and how to adjust for small samples and price.">
+<style>
+:root{--ink:#16212b;--muted:#4b5b69;--bg:#f4f7f5;--card:#ffffff;--line:#d5ded8;--brand:#0b5d3b;--brand-dark:#07402a;--accent:#f2b705;--soft:#e7f1ec}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;font-size:17px}
+.wrap{max-width:880px;margin:0 auto;padding:0 18px}
+.notice{background:#fff1b8;color:#3a2c00;border-bottom:2px solid var(--accent);font-size:.9rem;padding:10px 0;text-align:center}
+.notice p{margin:0}
+header.site{background:var(--brand);color:#fff}
+.site-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 20px;padding:14px 0}
+.logo{color:#fff;font-weight:800;font-size:1.35rem;text-decoration:none;letter-spacing:.2px}
+.logo span{color:var(--accent)}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+nav a{display:block;color:#fff;text-decoration:none;padding:8px 12px;border-radius:6px;font-size:.95rem;font-weight:600}
+nav a:hover,nav a:focus{background:var(--brand-dark)}
+nav a[aria-current="page"]{background:var(--brand-dark);box-shadow:inset 0 -3px 0 var(--accent)}
+main{padding:28px 0 40px}
+h1{font-size:clamp(1.65rem,5.5vw,2.35rem);line-height:1.2;margin:0 0 14px;color:var(--brand-dark)}
+h2{font-size:clamp(1.3rem,4vw,1.6rem);line-height:1.25;margin:34px 0 10px;color:var(--brand-dark)}
+h3{font-size:1.1rem;margin:20px 0 6px}
+p{margin:0 0 14px}
+a{color:#0a5a8a}
+.lead{font-size:1.12rem;color:var(--muted)}
+.answer{background:var(--soft);border-left:5px solid var(--brand);padding:14px 16px;border-radius:0 8px 8px 0;margin:18px 0}
+.answer p:last-child{margin-bottom:0}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:8px}
+.btn:hover,.btn:focus{background:var(--brand-dark)}
+.btn.alt{background:#fff;color:var(--brand-dark);border:2px solid var(--brand)}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}
+.card h3{margin-top:0}
+.card p{margin-bottom:10px}
+.table-wrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:.95rem}
+caption{caption-side:top;text-align:left;font-weight:700;padding:10px 12px;color:var(--brand-dark)}
+th,td{padding:9px 12px;border-top:1px solid var(--line);text-align:left}
+thead th{background:var(--soft);border-top:0}
+.note{font-size:.88rem;color:var(--muted)}
+ol,ul.plain{padding-left:22px;margin:0 0 14px}
+li{margin-bottom:8px}
+details{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:10px 0 0}
+.help{background:#fff;border:2px solid var(--brand);border-radius:10px;padding:16px;margin:30px 0 0}
+.help h2{margin-top:0}
+footer.site-foot{background:var(--brand-dark);color:#e8f0ec;padding:26px 0;font-size:.92rem}
+footer.site-foot a{color:#fff}
+footer.site-foot nav ul{margin-bottom:14px}
+footer.site-foot nav a{padding:6px 10px;background:rgba(255,255,255,.08)}
+.foot-notice{background:rgba(255,255,255,.1);padding:10px 12px;border-radius:6px}
+@media (min-width:700px){body{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="notice"><div class="wrap"><p>This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p></div></div>
+
+<header class="site">
+<div class="wrap site-top">
+<a class="logo" href="index.html">Slip<span>Check</span></a>
+<nav aria-label="Main">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="player-prop-hit-rates.html" aria-current="page">Prop Hit Rates</a></li>
+<li><a href="three-leg-parlay-odds.html">3-Leg Odds</a></li>
+<li><a href="parlay-true-probability.html">True Probability</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+<div class="wrap">
+
+<h1>NFL parlay builder player prop hit rates: what they show and what they hide</h1>
+<p class="lead">A hit rate is the easiest number to find when you build a parlay, and the easiest one to misread. This guide explains how to calculate it, how to adjust it, and how to check it against the price before it goes on your slip.</p>
+
+<div class="answer">
+<p><strong>Short version.</strong> A prop hit rate is the share of games in which a player cleared a line. It is a starting point, not a probability. Pull small samples toward 50%, compare the result to the break-even rate for your price, and only then treat it as a leg.</p>
+</div>
+
+<h2>What a hit rate is</h2>
+<p>Say a sportsbook sets a receiver's yardage line at 62.5. If he has gone for 63 or more in 6 of his last 10 games, his hit rate on the over is 60%. The half point means the bet can never tie, which keeps the math clean.</p>
+<p>Hit rates are popular in parlay builders because they turn a gut feeling into a number. A leg that has hit 8 of 10 times feels safe. The trouble is that it feels safer than it is, for three reasons covered below: small samples, the price you pay, and the fact that the sportsbook has seen the same game logs you have.</p>
+
+<h2>Look at more than one window</h2>
+<p>One window can tell a story the others contradict. The table uses an invented slot receiver and a 62.5 receiving yards line. The numbers are made up for illustration, but the pattern is real: short windows swing wildly and longer ones settle down.</p>
+
+<div class="table-wrap">
+<table>
+<caption>Example: over 62.5 receiving yards (invented player)</caption>
+<thead><tr><th>Window</th><th>Games</th><th>Hits</th><th>Hit rate</th></tr></thead>
+<tbody>
+<tr><td>Last 3 games</td><td>3</td><td>3</td><td>100%</td></tr>
+<tr><td>Last 5 games</td><td>5</td><td>4</td><td>80%</td></tr>
+<tr><td>Season to date</td><td>8</td><td>5</td><td>62.5%</td></tr>
+<tr><td>Home games</td><td>4</td><td>3</td><td>75%</td></tr>
+<tr><td>Road games</td><td>4</td><td>2</td><td>50%</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>If you only saw the first row, you would call this leg a lock. The season row says he clears the line a bit more than half the time, and the road row says the next game's location matters. Neither is wrong. They are different questions, and a good builder shows all of them.</p>
+
+<h2>Adjust for small samples</h2>
+<p>Three games is not enough to know anything. A coin can land heads three times in a row and still be a fair coin. One simple fix is to add ten imaginary games, five hits and five misses, to every record before you calculate the rate. The formula is (hits + 5) divided by (games + 10). It is a rule of thumb, not a law of nature, and it does the job of keeping hot streaks from looking like certainties.</p>
+
+<div class="table-wrap">
+<table>
+<caption>Raw hit rate versus adjusted hit rate</caption>
+<thead><tr><th>Window</th><th>Raw rate</th><th>Adjusted rate</th></tr></thead>
+<tbody>
+<tr><td>Last 3 games (3 of 3)</td><td>100%</td><td>61.5%</td></tr>
+<tr><td>Last 5 games (4 of 5)</td><td>80%</td><td>60.0%</td></tr>
+<tr><td>Season to date (5 of 8)</td><td>62.5%</td><td>55.6%</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Notice how the 100% turns into 61.5%. That is a much more honest number to carry into a parlay. The adjusted rate climbs toward the raw rate as the sample grows, so a player with 40 games of history would barely move.</p>
+
+<h2>Check the price, not just the rate</h2>
+<p>A 60% hit rate sounds strong. Whether it is strong depends on what the sportsbook charges for the bet. Each price has a break-even rate, the share of the time you need to win just to come out even.</p>
+
+<div class="table-wrap">
+<table>
+<caption>Break-even hit rate by price</caption>
+<thead><tr><th>Price on the leg</th><th>Break-even rate</th></tr></thead>
+<tbody>
+<tr><td>-110</td><td>52.4%</td></tr>
+<tr><td>-130</td><td>56.5%</td></tr>
+<tr><td>-150</td><td>60.0%</td></tr>
+<tr><td>-180</td><td>64.3%</td></tr>
+<tr><td>-200</td><td>66.7%</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>A player who has hit 60% of the time at -150 has no edge at all, even though the hit rate looks great. A 55% hit rate at -110 does have a small edge, about 2.6 percentage points. Hit rates only mean something when they sit above the break-even line for the price you are actually getting.</p>
+
+<h2>Why the sportsbook already knows</h2>
+<p>Lines are set to sit near a coin flip. If a receiver has gone over his number in 9 of 10 games, the book has usually raised the number, so next week's line is higher than the one he kept clearing. Past hit rates are measured against old lines. That is why an eye-catching hit rate often falls apart the following week without anything having changed about the player.</p>
+
+<h2>Five checks before a prop goes on your slip</h2>
+<ol>
+<li>Pick the exact line you are betting, not just the player. A hit rate on 62.5 yards says nothing about 75.5.</li>
+<li>Look at at least two windows, then apply the small sample adjustment.</li>
+<li>Compare the adjusted rate to the break-even rate for your price.</li>
+<li>Ask why the pattern exists. A change in role, an injury to a teammate, a weak pass defense, or weather can all move the number without showing up in last month's games.</li>
+<li>Make sure your legs do not depend on each other before you multiply them. A quarterback's passing yards and his top receiver's yards tend to rise together, so treating them as separate coin flips gives you the wrong total.</li>
+</ol>
+
+<h2>From hit rates to a parlay</h2>
+<p>Once each leg has an adjusted rate, you multiply them to get the chance the whole slip cashes. Three legs at 56%, 58%, and 55% multiply to about 17.9%. Whether that is good depends entirely on the payout, which is the subject of our guide on <a href="parlay-true-probability.html">turning a payout into a true probability</a>. To see why every extra leg gets harder to justify, read <a href="three-leg-parlay-odds.html">the odds of hitting a 3-leg parlay</a>.</p>
+
+<h2>Common questions</h2>
+<details>
+<summary>What is a good hit rate for a player prop?</summary>
+<p>One that sits clearly above the break-even rate for the price, after you adjust for sample size. At -110 that means better than 52.4%. At -150 it means better than 60%. A rate that only matches break-even is not an advantage.</p>
+</details>
+<details>
+<summary>Does a 100% hit rate mean the bet is safe?</summary>
+<p>No. A 100% rate over a few games is mostly noise. In the example above, 3 of 3 becomes 61.5% once it is adjusted, and the sportsbook has likely already raised the line.</p>
+</details>
+<details>
+<summary>How many games should I use?</summary>
+<p>Use the current season plus last season's games if the player's role has not changed. Short windows such as the last three games are fine as a second look, but they should not carry the decision.</p>
+</details>
+<details>
+<summary>Can hit rates tell me which parlay to bet?</summary>
+<p>They can tell you which legs look weaker or stronger than the price suggests. They cannot tell you what will happen on Sunday. SlipCheck does not promise winners.</p>
+</details>
+
+<div class="help">
+<h2>21+ and problem gambling help</h2>
+<p>SlipCheck is for adults 21 and older. Only bet money you can afford to lose. If gambling is causing you stress or problems, call or text 1-800-GAMBLER to reach the National Problem Gambling Helpline.</p>
+</div>
+
+</div>
+</main>
+
+<footer class="site-foot">
+<div class="wrap">
+<p class="foot-notice">This is a fictional website created for educational purposes as part of MKTG:4400 at the University of Iowa. It is not a real business.</p>
+<nav aria-label="Footer">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="player-prop-hit-rates.html">Prop Hit Rates</a></li>
+<li><a href="three-leg-parlay-odds.html">3-Leg Odds</a></li>
+<li><a href="parlay-true-probability.html">True Probability</a></li>
+</ul>
+</nav>
+<p>SlipCheck is for adults 21 and older and does not accept bets. Problem gambling help: 1-800-GAMBLER.</p>
+<p>&copy; 2026 SlipCheck (fictional). Contact: hello@slipcheck.example</p>
+</div>
+</footer>
+</body>
+</html>
